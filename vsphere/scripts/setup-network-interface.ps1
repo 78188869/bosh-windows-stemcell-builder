@@ -53,7 +53,7 @@ try {
     }
     LogWrite "Updated network interface"
 
-    Set-DnsClientServerAddress -InterfaceAlias $InterfaceName -ServerAddresses ("8.8.8.8", "8.8.4.4")
+    Set-DnsClientServerAddress -InterfaceAlias $InterfaceName -ServerAddresses ("10.62.51.101", "8.8.4.4")
     LogWrite "Updated DNS server addresses"
 } catch {
     LogWrite $_.Exception | Format-List -Force
