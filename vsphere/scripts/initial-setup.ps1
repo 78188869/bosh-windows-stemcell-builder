@@ -82,6 +82,8 @@ if (Test-Path $NetworkSettingsPath) {
 # Install PSWindowsUpdate Module
 Powershell -File "A:\install-ps-windows-update-module.ps1" "A:\PSWindowsUpdate.zip"
 
+$SkipUpdates=1
+
 if ($SkipUpdates -ne 0) {
     LogWrite "Skipping updates..."
 } else {
@@ -128,6 +130,10 @@ LogWrite "Win RM client auth Basic (Exit Code: ${LASTEXITCODE})"
 # Win RM listener Address/Port
 cmd.exe /c 'winrm set winrm/config/listener?Address=*+Transport=HTTP @{Port="5985"}'
 LogWrite "Win RM listener Address/Port (Exit Code: ${LASTEXITCODE})"
+
+# a fix for add firewall rules
+cmd.exe /c 'netsh firewall set service type=remoteadmin mode=enable'
+LogWrite "Win RM adv firewall rule add (Exit Code: ${LASTEXITCODE})"
 
 # Win RM adv firewall enable
 cmd.exe /c 'netsh advfirewall firewall set rule group="remote administration" new enable=yes'
