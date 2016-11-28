@@ -75,7 +75,6 @@ def packer_command(command, config_path)
 
     args = %{
       PACKER_LOG=1 \
-      PACKER_LOG_PATH="/var/vcap/packerlog.txt" \
       packer #{command} \
       -var "iso_url=#{ISO_URL}" \
       -var "iso_checksum_type=#{ISO_CHECKSUM_TYPE}" \
