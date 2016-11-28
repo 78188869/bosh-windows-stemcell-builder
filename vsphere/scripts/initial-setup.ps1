@@ -82,8 +82,6 @@ if (Test-Path $NetworkSettingsPath) {
 # Install PSWindowsUpdate Module
 Powershell -File "A:\install-ps-windows-update-module.ps1" "A:\PSWindowsUpdate.zip"
 
-$SkipUpdates=1
-
 if ($SkipUpdates -ne 0) {
     LogWrite "Skipping updates..."
 } else {
