@@ -75,6 +75,7 @@ def packer_command(command, config_path)
 
     args = %{
       packer #{command} \
+      -debug \
       -var "iso_url=#{ISO_URL}" \
       -var "iso_checksum_type=#{ISO_CHECKSUM_TYPE}" \
       -var "iso_checksum=#{ISO_CHECKSUM}" \
