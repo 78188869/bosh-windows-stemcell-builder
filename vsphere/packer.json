@@ -37,7 +37,7 @@
       "winrm_password": "vagrant",
       "winrm_timeout": "72h",
       "winrm_insecure": true,
-      "winrm_host": "{{user `winrm_host`}}",
+      "winrm_host": "10.62.51.123",
 
       "shutdown_command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -File a:\\sysprep.ps1 -NewPassword {{user `administrator_password`}}",
       "shutdown_timeout": "1h",
