@@ -30,7 +30,7 @@
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
       "headless": false,
-      "boot_wait": "50m",
+      "boot_wait": "20m",
 
       "communicator": "winrm",
       "winrm_username": "Administrator",
