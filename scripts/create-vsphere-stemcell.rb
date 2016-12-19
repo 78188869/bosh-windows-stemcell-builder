@@ -74,7 +74,6 @@ def packer_command(command, config_path)
   Dir.chdir(File.dirname(config_path)) do
 
     args = %{
-      PACKER_LOG=1 \
       packer #{command} \
       -var "iso_url=#{ISO_URL}" \
       -var "iso_checksum_type=#{ISO_CHECKSUM_TYPE}" \
