@@ -144,7 +144,7 @@ packer_config = File.join(BUILDER_PATH, "vsphere", "packer.json")
 FileUtils.mv(WINDOWS_UPDATE_PATH, File.join(File.dirname(packer_config), "PSWindowsUpdate.zip"))
 FileUtils.mv(ULTRADEFRAG_PATH, File.join(File.dirname(packer_config), "ultradefrag.zip"))
 
-packer_command('validate', packer_config)
+#packer_command('validate', packer_config)
 packer_command('build', packer_config)
 
 ova_file = Dir.glob('**/packer-vmware-iso.vmx' ).select { |fn| File.file?(fn) }
