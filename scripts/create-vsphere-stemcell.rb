@@ -74,7 +74,7 @@ def packer_command(command, config_path)
     args = %{
       PACKER_LOG=1 \
       packer #{command} \
-      -var "source_path=#{SOURCE_PATH}"
+      -var "source_path=#{SOURCE_PATH}" \
       -var "deps_url=#{DEPS_URL}" \
       -var "agent_url=#{AGENT_URL}" \
       -var "memsize=#{MEMSIZE}" \
