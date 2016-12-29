@@ -21,13 +21,13 @@ ULTRADEFRAG_PATH = File.absolute_path(Dir.glob('ultradefrag-zip/*.zip').first)
 OUTPUT_DIR = ENV.fetch("OUTPUT_DIR")
 MEMSIZE = ENV.fetch('MEMSIZE')
 NUMVCPUS = ENV.fetch('NUMVCPUS')
-REMOTE_HOST = ENV.fetch('REMOTE_HOST')
-REMOTE_PORT = ENV.fetch('REMOTE_PORT')
-REMOTE_DATASTORE = ENV.fetch('REMOTE_DATASTORE')
-REMOTE_CACHE_DATASTORE = ENV.fetch('REMOTE_CACHE_DATASTORE')
-REMOTE_CACHE_DIRECTORY = ENV.fetch('REMOTE_CACHE_DIRECTORY')
-REMOTE_USERNAME = ENV.fetch('REMOTE_USERNAME')
-REMOTE_PASSWORD = ENV.fetch('REMOTE_PASSWORD')
+# REMOTE_HOST = ENV.fetch('REMOTE_HOST')
+# REMOTE_PORT = ENV.fetch('REMOTE_PORT')
+# REMOTE_DATASTORE = ENV.fetch('REMOTE_DATASTORE')
+# REMOTE_CACHE_DATASTORE = ENV.fetch('REMOTE_CACHE_DATASTORE')
+# REMOTE_CACHE_DIRECTORY = ENV.fetch('REMOTE_CACHE_DIRECTORY')
+# REMOTE_USERNAME = ENV.fetch('REMOTE_USERNAME')
+# REMOTE_PASSWORD = ENV.fetch('REMOTE_PASSWORD')
 ADMINISTRATOR_PASSWORD = ENV.fetch('ADMINISTRATOR_PASSWORD')
 SOURCE_PATH = "/vmfs/volumes/datastore1/vm-9156e91c-534b-49e5-ad6b-ecee40a9e56d/vm-9156e91c-534b-49e5-ad6b-ecee40a9e56d.vmx"
 
@@ -74,18 +74,18 @@ def packer_command(command, config_path)
     args = %{
       PACKER_LOG=1 \
       packer #{command} \
-      -var "source_path=#{SOURCE_PATH}" \
+      -var "source_path=#{SOURCE_PATH}"
       -var "deps_url=#{DEPS_URL}" \
       -var "agent_url=#{AGENT_URL}" \
       -var "memsize=#{MEMSIZE}" \
       -var "numvcpus=#{NUMVCPUS}" \
-      -var "remote_host=#{REMOTE_HOST}" \
-      -var "remote_port=#{REMOTE_PORT}" \
-      -var "remote_datastore=#{REMOTE_DATASTORE}" \
-      -var "remote_cache_datastore=#{REMOTE_CACHE_DATASTORE}" \
-      -var "remote_cache_directory=#{REMOTE_CACHE_DIRECTORY}" \
-      -var "remote_username=#{REMOTE_USERNAME}" \
-      -var "remote_password=#{REMOTE_PASSWORD}" \
+      # -var "remote_host=#{REMOTE_HOST}" \
+      # -var "remote_port=#{REMOTE_PORT}" \
+      # -var "remote_datastore=#{REMOTE_DATASTORE}" \
+      # -var "remote_cache_datastore=#{REMOTE_CACHE_DATASTORE}" \
+      # -var "remote_cache_directory=#{REMOTE_CACHE_DIRECTORY}" \
+      # -var "remote_username=#{REMOTE_USERNAME}" \
+      # -var "remote_password=#{REMOTE_PASSWORD}" \
       -var "administrator_password=#{ADMINISTRATOR_PASSWORD}" \
       -var "winrm_host=#{GUEST_NETWORK_ADDRESS}" \
       #{config_path}
