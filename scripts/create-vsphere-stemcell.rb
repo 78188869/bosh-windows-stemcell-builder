@@ -79,13 +79,6 @@ def packer_command(command, config_path)
       -var "agent_url=#{AGENT_URL}" \
       -var "memsize=#{MEMSIZE}" \
       -var "numvcpus=#{NUMVCPUS}" \
-      # -var "remote_host=#{REMOTE_HOST}" \
-      # -var "remote_port=#{REMOTE_PORT}" \
-      # -var "remote_datastore=#{REMOTE_DATASTORE}" \
-      # -var "remote_cache_datastore=#{REMOTE_CACHE_DATASTORE}" \
-      # -var "remote_cache_directory=#{REMOTE_CACHE_DIRECTORY}" \
-      # -var "remote_username=#{REMOTE_USERNAME}" \
-      # -var "remote_password=#{REMOTE_PASSWORD}" \
       -var "administrator_password=#{ADMINISTRATOR_PASSWORD}" \
       -var "winrm_host=#{GUEST_NETWORK_ADDRESS}" \
       #{config_path}
