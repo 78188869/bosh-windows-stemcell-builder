@@ -30,6 +30,7 @@ REMOTE_USERNAME = ENV.fetch('REMOTE_USERNAME')
 REMOTE_PASSWORD = ENV.fetch('REMOTE_PASSWORD')
 ADMINISTRATOR_PASSWORD = ENV.fetch('ADMINISTRATOR_PASSWORD')
 SOURCE_PATH = "vmx/vm-9156e91c-534b-49e5-ad6b-ecee40a9e56d.vmx"
+SOURCE_PATH_1 = File.absolute_path(SOURCE_PATH)
 
 # erb_templates/network-interface-settings.xml
 GUEST_NETWORK_ADDRESS = ENV.fetch('GUEST_NETWORK_ADDRESS')
@@ -74,7 +75,7 @@ def packer_command(command, config_path)
     args = %{
       PACKER_LOG=1 \
       packer #{command} \
-      -var "source_path=#{SOURCE_PATH}" \
+      -var "source_path=#{SOURCE_PATH_1}" \
       -var "deps_url=#{DEPS_URL}" \
       -var "agent_url=#{AGENT_URL}" \
       -var "memsize=#{MEMSIZE}" \
