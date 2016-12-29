@@ -147,7 +147,7 @@ FileUtils.mv(ULTRADEFRAG_PATH, File.join(File.dirname(packer_config), "ultradefr
 packer_command('validate', packer_config)
 packer_command('build', packer_config)
 
-ova_file = Dir.glob('**/packer-vmware-iso.ova' ).select { |fn| File.file?(fn) }
+ova_file = Dir.glob('**/packer-vmware-iso.vmx' ).select { |fn| File.file?(fn) }
 if ova_file.length == 0
   abort("ERROR: unable to find packer-vmware-iso.ova")
 end
