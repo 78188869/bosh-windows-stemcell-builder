@@ -30,7 +30,7 @@ REMOTE_CACHE_DIRECTORY = ENV.fetch('REMOTE_CACHE_DIRECTORY')
 REMOTE_USERNAME = ENV.fetch('REMOTE_USERNAME')
 REMOTE_PASSWORD = ENV.fetch('REMOTE_PASSWORD')
 ADMINISTRATOR_PASSWORD = ENV.fetch('ADMINISTRATOR_PASSWORD')
-SOURCE_PATH = "/vmfs/volumes/53ec1eb2-baced56b-ae8a-d48cb5bcb1ea/vmx/vm-9156e91c-534b-49e5-ad6b-ecee40a9e56d.vmx"
+SOURCE_PATH = "vmx/vm-9156e91c-534b-49e5-ad6b-ecee40a9e56d.vmx"
 #SOURCE_PATH_1 = File.absolute_path(SOURCE_PATH)
 
 # erb_templates/network-interface-settings.xml
