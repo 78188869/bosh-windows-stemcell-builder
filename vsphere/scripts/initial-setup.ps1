@@ -180,3 +180,6 @@ LogWrite "Win RM Autostart (Exit Code: ${LASTEXITCODE})"
 # Start Win RM Service
 cmd.exe /c 'net start winrm'
 LogWrite "Start Win RM Service (Exit Code: ${LASTEXITCODE})"
+
+Powershell -File "A:\setup_cf_windows.ps1"
+LogWrite "setup firewall, disk quota and desktop heap"
