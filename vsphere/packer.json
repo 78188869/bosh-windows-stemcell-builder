@@ -1,8 +1,6 @@
 {
     "variables": {
-    "iso_url": null,
-    "iso_checksum_type": null,
-    "iso_checksum": null,
+    "source_path": null,
     "deps_url": null,
     "agent_url": null,
 
