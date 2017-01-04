@@ -25,7 +25,7 @@
     {
       "type": "vmware-vmx",
 
-      "source_path": "vmx/vm-9156e91c-534b-49e5-ad6b-ecee40a9e56d.vmx",
+      "source_path": "{{user `iso_url`}}",
       "headless": false,
       "boot_wait": "10m",
 

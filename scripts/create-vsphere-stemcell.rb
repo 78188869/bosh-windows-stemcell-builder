@@ -17,7 +17,7 @@ AGENT_COMMIT = File.read("bosh-agent-sha/sha").chomp
 
 WINDOWS_UPDATE_PATH = File.absolute_path(Dir.glob('ps-windows-update/*.zip').first)
 ULTRADEFRAG_PATH = File.absolute_path(Dir.glob('ultradefrag-zip/*.zip').first)
-#SOURCE_PATH_1 = File.absolute_path(Dir.glob('vmx/*.vmx').first)
+SOURCE_PATH = File.absolute_path(Dir.glob('base-iso/*.vmx').first)
 
 OUTPUT_DIR = ENV.fetch("OUTPUT_DIR")
 MEMSIZE = ENV.fetch('MEMSIZE')
@@ -30,8 +30,6 @@ REMOTE_CACHE_DIRECTORY = ENV.fetch('REMOTE_CACHE_DIRECTORY')
 REMOTE_USERNAME = ENV.fetch('REMOTE_USERNAME')
 REMOTE_PASSWORD = ENV.fetch('REMOTE_PASSWORD')
 ADMINISTRATOR_PASSWORD = ENV.fetch('ADMINISTRATOR_PASSWORD')
-SOURCE_PATH = "vmx/vm-9156e91c-534b-49e5-ad6b-ecee40a9e56d.vmx"
-#SOURCE_PATH_1 = File.absolute_path(SOURCE_PATH)
 
 # erb_templates/network-interface-settings.xml
 GUEST_NETWORK_ADDRESS = ENV.fetch('GUEST_NETWORK_ADDRESS')
