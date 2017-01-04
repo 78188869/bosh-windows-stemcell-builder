@@ -16,7 +16,7 @@ AGENT_URL = File.read("bosh-agent-zip/url").chomp
 AGENT_COMMIT = File.read("bosh-agent-sha/sha").chomp
 
 WINDOWS_UPDATE_PATH = File.absolute_path(Dir.glob('ps-windows-update/*.zip').first)
-ISO_URL = File.absolute_path(Dir.glob('base-iso/*.iso').first)
+ULTRADEFRAG_PATH = File.absolute_path(Dir.glob('ultradefrag-zip/*.zip').first)
 SOURCE_PATH = File.absolute_path(Dir.glob('base-iso/*.vmx').first)
 
 OUTPUT_DIR = ENV.fetch("OUTPUT_DIR")
