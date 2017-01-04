@@ -38,7 +38,6 @@
       "shutdown_command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -File a:\\sysprep.ps1 -NewPassword {{user `administrator_password`}}",
       "shutdown_timeout": "1h",
 
-      "guest_os_type": "windows8srv-64",
       "tools_upload_flavor": "windows",
       "vnc_port_min": 5900,
       "vnc_port_max": 5980,
@@ -71,7 +70,6 @@
         "ethernet0.wakeOnPcktRcv": "FALSE"
       },
       "output_directory": "output-vmware-iso",
-      "format": "ova"
     }
   ],
   "provisioners": [
