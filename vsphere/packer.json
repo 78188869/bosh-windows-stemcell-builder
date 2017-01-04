@@ -69,7 +69,7 @@
         "ethernet0.generatedAddressOffset": "0",
         "ethernet0.wakeOnPcktRcv": "FALSE"
       },
-      "output_directory": "output-vmware-iso",
+      "output_directory": "output-vmware-iso"
     }
   ],
   "provisioners": [
