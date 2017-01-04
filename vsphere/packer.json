@@ -108,7 +108,6 @@
         "scripts/compact.ps1"
       ],
       "environment_vars": [
-        "AGENT_DEPS_ZIP_URL={{user `deps_url`}}",
         "AGENT_ZIP_URL={{user `agent_url`}}"
       ]
     }
