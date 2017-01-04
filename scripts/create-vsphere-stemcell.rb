@@ -17,11 +17,9 @@ AGENT_COMMIT = File.read("bosh-agent-sha/sha").chomp
 
 WINDOWS_UPDATE_PATH = File.absolute_path(Dir.glob('ps-windows-update/*.zip').first)
 ISO_URL = File.absolute_path(Dir.glob('base-iso/*.iso').first)
-ULTRADEFRAG_PATH = File.absolute_path(Dir.glob('ultradefrag-zip/*.zip').first)
+SOURCE_PATH = File.absolute_path(Dir.glob('base-iso/*.vmx').first)
 
 OUTPUT_DIR = ENV.fetch("OUTPUT_DIR")
-ISO_CHECKSUM_TYPE = ENV.fetch('ISO_CHECKSUM_TYPE')
-ISO_CHECKSUM = ENV.fetch('ISO_CHECKSUM')
 MEMSIZE = ENV.fetch('MEMSIZE')
 NUMVCPUS = ENV.fetch('NUMVCPUS')
 REMOTE_HOST = ENV.fetch('REMOTE_HOST')
@@ -74,10 +72,9 @@ def packer_command(command, config_path)
   Dir.chdir(File.dirname(config_path)) do
 
     args = %{
+      PACKER_LOG=1 \
       packer #{command} \
-      -var "iso_url=#{ISO_URL}" \
-      -var "iso_checksum_type=#{ISO_CHECKSUM_TYPE}" \
-      -var "iso_checksum=#{ISO_CHECKSUM}" \
+      -var "source_path=#{SOURCE_PATH}" \
       -var "deps_url=#{DEPS_URL}" \
       -var "agent_url=#{AGENT_URL}" \
       -var "memsize=#{MEMSIZE}" \

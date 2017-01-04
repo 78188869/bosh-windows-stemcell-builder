@@ -24,13 +24,11 @@
   },
   "builders": [
     {
-      "type": "vmware-iso",
+      "type": "vmware-vmx",
 
-      "iso_url": "{{user `iso_url`}}",
-      "iso_checksum_type": "{{user `iso_checksum_type`}}",
-      "iso_checksum": "{{user `iso_checksum`}}",
+      "source_path": "{{user `source_path`}}",
       "headless": false,
-      "boot_wait": "20m",
+      "boot_wait": "10m",
 
       "communicator": "winrm",
       "winrm_username": "Administrator",
@@ -44,7 +42,6 @@
 
       "guest_os_type": "windows8srv-64",
       "tools_upload_flavor": "windows",
-      "disk_size": 40000,
       "vnc_port_min": 5900,
       "vnc_port_max": 5980,
       "floppy_files": [
@@ -75,17 +72,6 @@
         "ethernet0.generatedAddressOffset": "0",
         "ethernet0.wakeOnPcktRcv": "FALSE"
       },
-
-      "remote_type": "esx5",
-      "remote_host": "{{user `remote_host`}}",
-      "remote_port": "{{user `remote_port`}}",
-      "remote_datastore": "{{user `remote_datastore`}}",
-      "remote_cache_datastore": "{{user `remote_cache_datastore`}}",
-      "remote_cache_directory": "{{user `remote_cache_directory`}}",
-
-      "remote_username": "{{user `remote_username`}}",
-      "remote_password": "{{user `remote_password`}}",
-
       "output_directory": "output-vmware-iso",
       "format": "ova"
     }
